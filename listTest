@@ -1,0 +1,25 @@
+import random
+import math
+
+def disperse(rows, columns, density, upper_range, my_list):
+    '''Function returns array of locations
+
+    Takes probabilities and densities'''
+    if [rows + 1, columns] in my_list or \
+            [rows - 1, columns] in my_list or \
+            [rows, columns + 1] in my_list or \
+            [rows, columns - 1] in my_list or \
+            [rows + 1, columns + 1] in my_list or \
+            [rows + 1, columns - 1] in my_list or \
+            [rows - 1, columns + 1] in my_list or \
+            [rows - 1, columns - 1] in my_list:
+                if random.randrange(upper_range) < density:
+                    my_list.append([rows, columns])
+    elif (random.randrange(1000) > 1000 - density):
+        my_list.append([rows, columns])
+
+        print(my_list)
+    return my_list
+
+disperse()
+
